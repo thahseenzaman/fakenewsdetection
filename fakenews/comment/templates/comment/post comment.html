@@ -1,0 +1,26 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+<html>
+<head><title>post comment</title>
+</head>
+<body>
+	<h1 align="center">POST COMMENT</h1>
+
+	<table align="center">
+        <form method="post">
+        {% csrf_token %}
+
+		<tr>
+			<td>COMMENT</td>
+			<td><input type="text" name="com"></td>
+		</tr>
+		<tr>
+			<td>DATE</td>
+			<td><input type="date" name="date" value=""/>
+		</tr>
+		<td><input type="submit" name="post" value="POST"></td>
+            </form>
+	</table>
+
+</body>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'temp/admin.html' %}
+{% block  base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>fake</title>
+</head>
+<body>
+	<h1 align="center">fake news update</h1>
+	<table align="center">
+        <form method="post">
+            {% csrf_token %}
+            {% if objval %}
+		<tr>
+			<td>uid</td>
+			<td><input type="text" name="u" value="{{ objval.u.name }}"></td>
+			</tr>
+			<tr>
+				<td>news</td>
+				<td><input type="text" name="news" value="{{ objval.news }}"></td>
+			</tr>
+			<tr>
+				<td>date</td>
+				<td><input type="text" name="date" value="{{ objval.date }}"></td>
+			</tr>
+            {% endif %}
+			<tr>
+				<td><input type="submit" name="update" value="update"></td></tr>
+            </form>
+	</table>
+
+</body>
+</html>
+{% endblock %}

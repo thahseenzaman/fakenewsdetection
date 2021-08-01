@@ -1,0 +1,25 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+
+      <h1 align="center">view video</h1>
+    <div class="container">
+
+      <table class="table table-bordered">
+          {% for obj in viewvideo %}
+         <tr>
+
+            <video width="320" height="240" controls>
+  <source src="/static/{{ obj.video }}" type="video/*">
+
+</video>
+         </tr>
+          {% endfor %}
+{#         <tr>#}
+{#            <td>{{  }}</td>#}
+{##}
+{#         </tr>#}
+
+
+      </table>
+    </div>
+{% endblock %}

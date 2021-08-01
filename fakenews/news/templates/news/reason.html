@@ -1,0 +1,18 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+<h1 align="center">REASON</h1>
+<form method="post">
+<table align="center">
+    {% csrf_token %}
+
+	<tr>
+		<td>REASON</td>
+		<td><input type="text" name="re"></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><input type="submit" name="submit" value="POST"></td>
+	</tr>
+</table>
+</form>
+{% endblock %}

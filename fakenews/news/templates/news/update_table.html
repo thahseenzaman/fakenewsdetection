@@ -1,0 +1,43 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+
+  
+   <body>
+      <h1 align="center">FAKE NEWS UPDATE</h1>
+      <div class="container">
+      <table class="table table-bordered">
+         <tr>
+            <td>USERNAME </td>
+            <td>NEWS</td>
+            <td>DATE</td>
+                <td>IMAGE</td>
+            <td>STATUS</td>
+         </tr>
+          {% if objval %}
+          {% for obj in objval %}
+         <tr>
+           
+         </tr>
+         <tr>
+            <td>{{ obj.u.name }}</td>
+            <td>{{ obj.news }}</td>
+            <td>{{ obj.date }}</td>
+
+             {% if obj.fake == 'Fake News Identified By Admin' %}
+
+              <td style="color: red;font-weight: bolder">{{ obj.fake }}</td>
+
+                 {% else %}
+                  <td style="color: black;font-weight: bolder">{{ obj.fake }}</td>
+             {% endif %}
+
+
+                <td> <img src="/static/{{ obj.img  }}" width="150"></td>
+{#            <td><a href="{% url 'updatenew' idd=obj.nid %}" class="btn btn-primary">update</a></td>#}
+         </tr>
+          {% endfor %}
+      {% endif %}
+         </table>
+      </div>
+
+{% endblock %}

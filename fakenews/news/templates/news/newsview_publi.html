@@ -1,0 +1,37 @@
+
+{% extends 'temp/index.html' %}
+{% block admin %}
+
+
+   <body>
+      <h1 align="center">VIEW NEWS</h1>
+      <div class="container">
+      <table class="table table-bordered">
+         <tr align="center">
+            <td>NEWS</td>
+            <td>DATE</td>
+             <td>IMAGE</td>
+            <td>STATUS</td>
+
+         </tr>
+           {% if objval %}
+          {% for obj in objval %}
+         <tr align="center">
+            <td>{{ obj.news }}</td>
+            <td> {{ obj.date  }}</td>
+          <td> <img src="/static/{{ obj.img  }}" width="150"></td>
+           {% if obj.fake == 'Fake News Identified By Admin' %}
+
+              <td style="color: red;font-weight: bolder">{{ obj.fake }}</td>
+
+                 {% else %}
+                  <td style="color: black;font-weight: bolder">{{ obj.fake }}</td>
+             {% endif %}
+         </tr>
+          {% endfor %}
+      {% endif %}
+         </table>
+      </div>
+   </body>
+
+{% endblock %}

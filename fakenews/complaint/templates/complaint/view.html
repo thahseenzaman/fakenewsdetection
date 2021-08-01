@@ -1,0 +1,32 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+
+
+
+<body>
+	<h1 align="center">complaint view</h1>
+    <div class="container">
+	<table class="table table-bordered">
+		<tr>
+			<td>uid</td>
+			<td>complaint</td>
+			<td>date</td>
+            <td>MINIMUM</td>
+            <td></td>
+		</tr>
+         {% if objval %}
+          {% for obj in objval %}
+		<tr>
+			<td>{{ obj.u.name }} </td>
+			<td>{{ obj.complaint }} </td>
+			<td>{{ obj.date }}</td>
+            <td>{{ minimum }}</td>
+        <td><a href="{% url 'reply' idd=obj.cid %}" class="btn btn-primary">reply</a> </td>
+	</tr>
+      {% endfor %}
+      {% endif %}
+    </table>
+    </div>
+
+
+{% endblock %}

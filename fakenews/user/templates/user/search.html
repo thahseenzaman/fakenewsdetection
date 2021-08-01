@@ -1,0 +1,40 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+	<title>SEARCH</title>
+
+    <form method="POST">
+	<h1 align="center">SEARCH</h1>
+
+	<table align="center">
+        {% csrf_token %}
+{#		<tr>#}
+{#			<td>uid</td>#}
+{#			<td><input type="text" name="uid"></td>#}
+{#		</tr>#}
+		<tr>
+
+	<td><input type="text" name="news" placeholder="search here"></td>
+</tr>
+
+<tr>
+	<td><input type="submit" name="search" value="SEARCH"></td>
+</tr>
+</table>
+
+    </form>
+
+    <br><br>
+    <table border="2" width="400">
+        {% if objval %}
+            {% for i in objval %}
+        <tr>
+            <td style="width: 200px">{{ i.name }}</td>
+            <td><a href="{% url 'sndr' idd=i.u_id %}"  class="btn btn-primary">send request</a> </td>
+        </tr>
+            {% endfor %}
+            {% else %}
+            <h3>Not found...!!!</h3>
+        {% endif %}
+    </table>
+
+    {% endblock %}

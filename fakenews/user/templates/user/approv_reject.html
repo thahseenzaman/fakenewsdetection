@@ -1,0 +1,31 @@
+<div id="pr_manager">
+    <form name="f1" method="post" action="approve.php" id="f1">
+        <table>
+            <form method="post">
+                {% csrf_token %}
+            <tr>
+                <td class="f1_label"> Id </td><td><input type="text" name="id" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td class="f1_label">Uid</td><td><input type="text" name="uid" value=""  />
+                </td>
+            </tr>
+             <tr>
+                <td class="f1_label"> Request </td><td><input type="text" name="Request" value="" />
+                </td>
+            </tr>
+             <tr>
+                <td class="f1_label"> Date </td><td><input type="Date" name="Date" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" name="approve" value="approve" style="font-size:18px; " />
+                    <td><input type="submit" name="reject" value="reject" style="font-size:18px; " /></td>
+                </td>
+            </tr>
+            </form>
+        </table>
+    </form> 
+</div>

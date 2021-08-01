@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <title>View Requests</title>
+   </head>
+  
+   <body>
+      <table border = "1">
+         <tr>
+
+            <th>Uid </th>
+            <th>Name</th>
+            <th></th>
+         </tr>
+         {% if  objval %}
+          {% for obj in objval %}
+         <tr>
+            <td>{{ obj.uid }}</td>
+            <td>{{ obj.name }}</td>
+            <td><a href="">Accept</a> </td>
+            <td><a href="">Reject</a> </td>
+         </tr>
+          {% endfor %}
+{% endif %}
+
+      </table>
+   </body>
+</html>

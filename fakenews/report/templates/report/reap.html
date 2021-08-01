@@ -1,0 +1,38 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+
+<body>
+	<h1 align="center">MANAGE FAKE NEWS REPORT</h1>
+    <div class="container">
+
+	<table class="table table-bordered">
+
+		<tr>
+			<td><b>REPORTER NAME</b></td>
+			<td><b>NEWS</b></td>
+			<td><b>R.DATE</b></td>
+			<td><b>REPORT</b></td>
+            <td><b>POSTED BY</b></td>
+            <td></td>
+             <td></td>
+		</tr>
+            {% if objval %}
+            {% for obj in objval %}
+		<tr>
+			<td>{{ obj.u.name }}</td>
+			<td>{{ obj.n.news }}</td>
+			<td>{{ obj.date }}</td>
+			<td>{{ obj.reason }}</td>
+            <td>{{ obj.n.u.name }}</td>
+			<td><a href="{% url 'approve' idd=obj.id %}" class="btn btn-primary">Detect</a></td>
+			<td><a href="{% url 'reject' idd=obj.id %}" class="btn btn-danger">Reject</a></td>
+	</tr>
+            {% endfor %}
+        {% endif %}
+</form>
+    </table>
+    </div>
+
+</body>
+</html>
+{% endblock %}

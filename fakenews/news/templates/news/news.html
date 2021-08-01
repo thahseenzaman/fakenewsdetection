@@ -1,0 +1,32 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+
+
+
+	<h1 align="center">NEWS UPLOAD</h1>
+    <form method="POST" enctype="multipart/form-data">
+
+	<table align="center">
+        {% csrf_token %}
+{#		<tr>#}
+{#			<td>uid</td>#}
+{#			<td><input type="text" name="uid"></td>#}
+{#		</tr>#}
+		<tr>
+			<td>News</td>
+            <td><textarea name="news" required="" class="form-control"></textarea></td>
+</tr>
+<tr>
+
+	<td>Image</td>
+	<td><input type="file" accept="image/*" required="" name="im"></td>
+</tr>
+
+<tr>
+    <td></td>
+	<td><input type="submit" name="upload" value="PUBLISH" class="btn btn-success"></td>
+</tr>
+</table>
+
+</form>
+    {% endblock %}

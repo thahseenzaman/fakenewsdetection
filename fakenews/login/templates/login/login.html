@@ -1,0 +1,32 @@
+{% extends 'temp/index.html' %}
+{% block admin %}
+<html>
+<head>
+	<title>login form</title>
+	<h1 align="center">LOGIN</h1>
+
+	<table align="center">
+        <form method="post">
+            {% csrf_token %}
+		<tr>
+			<td height="50">user name</td>
+			<td><input type="text" name="user"></td>
+		</tr>
+<tr>
+	<td height="50">password</td>
+	<td><input type="password" name="password"></td>
+</tr>
+<tr>
+    <td></td>
+	<td height="50"><input type="submit" name="login" value="login" class="btn btn-primary"></td>
+</tr>
+        </form>
+</table>
+    {% if msg %}
+    <script>
+        alert("{{ msg }}")
+    </script>
+{% endif %}
+</head>
+</html>
+{% endblock %}

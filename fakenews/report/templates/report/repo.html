@@ -1,0 +1,29 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+  
+   <body>
+      <h1 align="center">fake news report</h1>
+      <div class="container">
+      <table class="table table-bordered">
+         <tr>
+            <td>USERNAME </td>
+            <td>NEWS</td>
+            <td>DATE</td>
+            <td>REPORT</td>
+             <td></td>
+         </tr>
+           {% if objval %}
+          {% for obj in objval %}
+         <tr>
+            <td>{{ obj.u_id }}</td>
+            <td>{{ obj.n.news }}</td>
+            <td>{{ obj.date }}</td>
+            <td>{{ obj.reason }}</td>
+            <td><a href="rep.html" class="btn btn-primary">report</a></td>
+         </tr>
+          {% endfor %}
+      {% endif %}
+         </table>
+      </div>
+   </body>
+{% endblock %}

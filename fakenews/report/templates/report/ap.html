@@ -1,0 +1,147 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+
+
+
+	<h1 align="center">FAKE NEWS IDENTIFY</h1>
+    <form method="POST" >
+    {% csrf_token %}
+
+    <div style="height: 50px"></div>
+
+	<table align="center">
+        {% csrf_token %}
+
+        {% if objval %}
+<tr>
+      <h3 align="center">News Details</h3>
+</tr>
+
+
+		<tr>
+			<td>NEWS</td>
+            <td><textarea name="news" required="" class="form-control" readonly>{{ objval.news }}
+            </textarea></td>
+</tr>
+        <tr>
+
+	<td>IMAGE</td>
+	<td>
+<img src="/static/{{ objval.img }}" width="200">
+    </td>
+</tr>
+
+            <tr>
+
+	<td>SOURCE</td>
+	<td><input type="text" readonly class="form-control" value="{{ objval.u.name }}"></td>
+</tr>
+
+                        <tr>
+
+	<td>POSTED DATE</td>
+	<td><input type="text" readonly class="form-control" value="{{ objval.date }}"></td>
+</tr>
+
+            <tr>
+            <td height="40">
+
+            </td>
+            </tr>
+
+
+
+
+
+<tr>
+
+	<td>FAKE STATUS</td>
+	<td><input type="text" readonly class="form-control" value="{{ objval.fake }}"></td>
+</tr>
+
+
+<tr>
+	<td>SUBJECTIVE INFO</td>
+
+    {% if objval.status == 0 %}
+
+	<td style="font-weight: bolder">  Normal</td>
+
+        {% elif objval.status == 1 %}
+
+        <td style="color: blue ;font-weight: bolder">  Positive Compound</td>
+
+          {% elif objval.status == -1 %}
+
+        <td style="color: red;font-weight: bolder">  Negative Compound</td>
+
+        {% else %}
+        <td style="font-weight: bolder">  No data</td>
+
+{% endif %}
+</tr>
+
+
+        {% endif %}
+
+
+    <tr>
+
+	<td>TOTAL FAKE REPORT ON SAME NEWS : </td>
+	<td><input type="text" readonly class="form-control" value="Total : {{ n_count }}"></td>
+</tr>
+
+ <tr>
+
+	<td>FAKE NEWS REPORT ON SAME USER : </td>
+	<td><input type="text" readonly class="form-control" value="{{ u_count }}"></td>
+</tr>
+
+     <tr>
+
+	<td>VERIFIED FAKE NEWS : </td>
+	<td><input type="text" readonly class="form-control" value="{{ fa }}"></td>
+</tr>
+
+       <tr>
+            <td height="40">
+
+            </td>
+            </tr>
+
+<tr>
+
+	<td>REPORTER NAME : </td>
+	<td>
+        <label>
+            {{ r_nm }}
+        </label>
+    </td>
+</tr>
+
+<tr>
+
+	<td>HIS REPORTING : </td>
+	<td>  <label>
+            Total : {{ r_idd }}
+        </label></td>
+</tr>
+
+
+
+<tr>
+    <td></td>
+	<td height="50"><input type="submit" name="g" value="MARK AS GENUINE" class="btn btn-primary">
+
+    </td>
+</tr>
+    <tr>
+    <td></td>
+	<td height="50">
+    <input type="submit" name="f" value="MARK AS FAKE" class="btn btn-danger">
+    </td>
+</tr>
+</table>
+
+</form>
+    {% endblock %}

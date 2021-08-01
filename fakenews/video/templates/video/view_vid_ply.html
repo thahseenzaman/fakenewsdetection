@@ -1,0 +1,24 @@
+{% extends 'temp/index.html' %}
+{% block admin %}
+
+      <h1 align="center">view video</h1>
+    <div class="container">
+
+      <table class="table table-bordered">
+          {% for obj in viewvideo %}
+         <tr>
+<td>
+            <video width="320" height="240" controls src="/static/{{ obj.video }}" type="video/*">
+
+</video></td>
+         </tr>
+          {% endfor %}
+{#         <tr>#}
+{#            <td>{{  }}</td>#}
+{##}
+{#         </tr>#}
+
+
+      </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,32 @@
+
+{% extends 'temp/user.html' %}
+{% block base %}
+
+      <h1 align="center">View News</h1>
+      <table  class="text-center" border="2" width="700">
+         <tr>
+            <td>News</td>
+            <td>Date</td>
+             <td>Image</td>
+              <td>Status</td>
+
+         </tr>
+           {% if objval %}
+          {% for obj in objval %}
+         <tr>
+            <td>{{ obj.news }}</td>
+            <td> {{ obj.date  }}</td>
+           <td> <img src="/static/{{ obj.img  }}" width="150"></td>
+          {% if obj.fake == 'Fake News Identified By Admin' %}
+
+              <td style="color: red;font-weight: bolder">{{ obj.fake }}</td>
+
+                 {% else %}
+                  <td style="color: black;font-weight: bolder">{{ obj.fake }}</td>
+             {% endif %}
+         </tr>
+          {% endfor %}
+      {% endif %}
+         </table>
+
+{% endblock %}

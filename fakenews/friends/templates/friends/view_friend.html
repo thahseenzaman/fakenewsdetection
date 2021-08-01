@@ -1,0 +1,26 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+
+
+   <body>
+      <h1 align="center">view friend request</h1>
+      <div class="container">
+      <table class="table table-bordered">
+         <tr>
+            <td>username </td>
+
+         </tr>
+           {% if value %}
+          {% for obj in value %}
+         <tr>
+            <td>{{ obj.u.name }} </td>
+             <td><a href="{% url 'fapprove' idd=obj.id %}"class="btn btn-primary">approve</a> </td>
+             <td><a href="{% url 'freject' idd=obj.id %}" class="btn btn-danger">reject</a> </td>
+
+         </tr>
+          {% endfor %}
+      {% endif %}
+      </table>
+      </div>
+
+{% endblock %}

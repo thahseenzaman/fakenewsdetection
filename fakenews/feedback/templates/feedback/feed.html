@@ -1,0 +1,26 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+
+   <body>
+      <h1 align="center">VIEW FEEDBACK</h1>
+      <div class="container">
+      <table class="table table-bordered">
+         <tr>
+            <td><b>USERNAME</b> </td>
+            <td><b>FEEDBACK</b></td>
+            <td><b>DATE</b></td>
+         </tr>
+           {% if objval %}
+          {% for obj in objval %}
+         <tr>
+            <td>{{ obj.u.name }} </td>
+            <td>{{ obj.feedback }}</td>
+            <td>{{ obj.date }}</td>
+         </tr>
+          {% endfor %}
+      {% endif %}
+      </table>
+      </div>
+   </body>
+</html>
+{% endblock %}

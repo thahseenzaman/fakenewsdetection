@@ -1,0 +1,23 @@
+<html>
+<head>
+	<title>login</title>
+</head>
+<body>
+	<h1 align="center">LOGIN</h1>
+    <form method="post">
+	<table align="center">
+        {% csrf_token %} }
+		<tr>
+			<td>username</td>
+			<td><input type="text" name="u"></td>
+		</tr>
+		<tr>
+			<td>password</td>
+			<td><input type="password" name="p">
+			</td>
+		</tr>
+		<tr>
+			<td><input type="submit" name="l" value="login"></td>
+		</tr>
+	</table>
+</body>

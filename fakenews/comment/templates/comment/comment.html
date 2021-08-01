@@ -1,0 +1,21 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+      <h1 align="center">view comment</h1>
+      <table border = "1" align="center">
+         <tr>
+
+            <td>Comment</td>
+            <td>Date</td>
+         </tr>
+         {% if objval %}
+          {% for obj in objval %}
+         <tr>
+
+            <td>{{ obj.comment }}</td>
+            <td>{{ obj.date }}</td>
+         </tr>
+
+          {% endfor %}
+      {% endif %}
+      </table>
+{% endblock %}

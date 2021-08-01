@@ -1,0 +1,25 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+<html>
+<head><title>image upload</title></head>
+<body>
+	<h1 align="center">IMAGE UPLOAD</h1>
+    <form method="post" enctype="multipart/form-data">
+	<table align="center">
+        {% csrf_token %}
+		<tr>
+			<td>IMAGE UPLOAD</td>
+{#			<td><input type="text" name="img" value=""/></td>#}
+			<td><input type="file" id="upload" accept="image/*" name="img" value="select file"></td>
+		</tr>
+		<tr>
+			<td><input type="submit" name="upload" value="upload" style="..."/>
+
+			</td>
+
+	</tr>
+	</table>
+    </form>
+	</body>
+	</html>
+		{% endblock %}

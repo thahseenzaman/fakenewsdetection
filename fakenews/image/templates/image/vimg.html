@@ -1,0 +1,30 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <title> View image play</title>
+   </head>
+  
+   <body>
+      <h1 align="center">view image</h1>
+
+ <table  class="text-center" border="2" width="700">
+          {% for obj in viewimages %}
+         <tr>
+
+            <th>image</th>
+             <td><img src="/static/{{ obj.image }}" height="80" width="70"></td>
+         </tr>
+          {% endfor %}
+         <tr>
+{#            <td>{{  }}</td>#}
+
+         </tr>
+        
+          
+      </table>
+   </body>
+</html>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>report</title>
+</head>
+<body>
+	<h1 align="center">VIEW REQUEST</h1>
+	<table align="center" border="2" width="400">
+		<tr>
+			<td>uid</td>
+			<td>request</td>
+<td></td>
+		</tr>
+         {% if objval %}
+          {% for obj in objval %}
+		<tr>
+			<td>{{ obj.u_id }} </td>
+			<td>{{ obj.request }} </td>
+
+        <td><a href="{% url 'unblock' idd=obj.re_id uid=obj.u_id %}" class="btn btn-success">UNBLOCK</a> </td>
+	</tr>
+      {% endfor %}
+      {% endif %}
+    </table>
+
+</body>
+</html>
+{% endblock %}

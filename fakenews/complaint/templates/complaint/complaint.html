@@ -1,0 +1,30 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add complaint</title>
+</head>
+<body>
+<h1 align="center">ADD COMPLAINT</h1>
+<form method="post">
+    {% csrf_token %}
+<TABLE ALIGN="center">
+     {% csrf_token %}
+    <tr>
+        <td>complaint</td>
+        <td><input type="text" name="c" required></td>
+    </tr>
+    <tr>
+        <td>date</td>
+        <td><input type="date" name="d" required></td>
+    </tr>
+    <tr>
+        <td><input type="submit" name="post" value="POST"></td>
+    </tr>
+</TABLE>
+
+</body>
+</html>
+{% endblock %}
